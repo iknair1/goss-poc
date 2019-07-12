@@ -1,0 +1,21 @@
+port:
+  tcp:80:
+    listening: true
+    ip:
+    - 0.0.0.0
+command:
+  pip list:
+    exit-status: 0
+    stdout:
+    - Flask
+    stderr: []
+    timeout: 10000
+process:
+  python:
+    running: true
+http:
+  http://localhost:80:
+    status: 200
+    timeout: 5000
+    body:
+    - Flask inside Docker!!
